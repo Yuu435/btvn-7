@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    object-fit: cover;
+    width: 800px;
+    margin: auto;
+    height: 400px;
+    background-image: url(../images/1000_F_294718224_HUG12DhTJX2mnsBNoU0At5FebQjduwT2.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* animate snow */
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+/* heart./start */
+.wrap-heart {
+    position: relative;
+    animation: heart 1s infinite linear;
+    width: 80px;
+    margin-right: -300px;
+}
+.wrap-heart .item{
+    width: 70px;
+    height: 70px;
+    background-color: rgb(247, 184, 184);
+}
+.wrap-heart .item-1 {
+    transform: rotate(45deg);
+    border-radius: 50% 0 0 50%;
+}
+.wrap-heart .item-2 {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    border-radius: 50% 50% 0 0;
+    transform: rotate(45deg);
+}
+.wrap-heart .item-3 {
+    position: absolute;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+@keyframes heart {
+    from {
+        transform: scale(1.5);
+    }
+}
+
+/* Wavy./start */
+.wrap-wavy {
+    position: relative;
+}
+.wrap-wavy span {
+    position: relative;
+    display: inline-block;
+    color: rgb(203, 255, 98);
+    font-size: 2em;
+    animation: animate 1s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0px);
+    }
+    20% {
+        transform: translateY(-20px);
+    }
+    40%, 100%  {
+        transform: translateY(0px);
+    }
+}
+
+
+/* snow./start */
+.snow,.snow:after,.snow:before {
+    content: "";
+    position: absolute;
+    top: -250px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+    radial-gradient(4px 4px at 100px 50px, #fff, transparent),
+    radial-gradient(6px 6px at 200px 150px, #fff, transparent),
+    radial-gradient(3px 3px at 300px 250px, #fff, transparent),
+    radial-gradient(4px 4px at 400px 350px, #fff, transparent),
+    radial-gradient(4px 4px at 500px 100px, #fff, transparent),
+    radial-gradient(4px 4px at 50px 200px, #fff, transparent),
+    radial-gradient(4px 4px at 150px 300px, #fff, transparent),
+    radial-gradient(4px 4px at 250px 400px, #fff, transparent),
+    radial-gradient(4px 4px at 3500px 500px, #fff, transparent);
+    background-size: 250px 250px;
+    animation: snowAnimation 3s linear infinite;
+}
+.snow:after {
+    margin-left: 250px;
+    opacity: 0.5; /* Hieu ung trong suot */
+    filter: blur(2px); /* Làm Nhòe */
+}
+.snow:before {
+    margin-left: 250px;
+    opacity: 0.7; /* Hieu ung trong suot */
+    filter: blur(1px); /* Làm Nhòe */
+}
+
+@keyframes snowAnimation{
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(250px);
+    }
+}
